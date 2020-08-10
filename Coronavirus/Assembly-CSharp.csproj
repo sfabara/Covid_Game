@@ -60,6 +60,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\DigitalClock.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
