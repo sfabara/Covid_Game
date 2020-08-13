@@ -19,10 +19,12 @@ public class DigitalClock : MonoBehaviour
     void Start()
     {
 
+        // TODO: should dynamically create Text displays, instead on relying on references. 
+
         hour = 0;
         day = 0;
         month = 1;
-        year = 2006; 
+        year = 2006; // ehhhh ? laffy taffy 
 
         elapsedTime = 0; 
 
@@ -64,10 +66,36 @@ public class DigitalClock : MonoBehaviour
 
         }
         
-
-        
-        Debug.Log("Hour: " + hour + " Day: " + day + " Month: " + month + " Year: " + year); 
-        Debug.Log(elapsedTime); 
+        // Will display updating variables in debug log. 
+        if(DebugTimeLog)
+        {
+            Debug.Log("Hour: " + hour + " Day: " + day + " Month: " + month + " Year: " + year); 
+            Debug.Log(elapsedTime); 
+        }
 
     }
+
+
+    public float getHour()
+    {
+        return hour; 
+    }
+
+    public float getDay()
+    {
+        return day; 
+    }
+
+    public float getMonth()
+    {
+        return month;
+    }
+
+    public float getyear()
+    {
+        return year;
+    }
+
+
+
 }
