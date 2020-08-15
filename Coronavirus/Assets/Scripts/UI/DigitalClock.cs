@@ -34,45 +34,51 @@ public class DigitalClock : MonoBehaviour
     void Update()
     {
 
+        updateGameTime();
+
+    }
+
+    void updateGameTime()
+    {
+
         hourText.text = "Hour: " + hour.ToString();
         dayText.text = "Day: " + day.ToString();
         monthText.text = "Month: " + month.ToString();
-        yearText.text = "Year: " + year.ToString(); 
+        yearText.text = "Year: " + year.ToString();
 
-        elapsedTime += Time.deltaTime;   
+        elapsedTime += Time.deltaTime;
 
-       
-        if(elapsedTime >= Seconds_per_ingame_hour)
+
+        if (elapsedTime >= Seconds_per_ingame_hour)
         {
             hour++;
-            elapsedTime = 0; 
-            
-            
-            if(hour == 24)
+            elapsedTime = 0;
+
+
+            if (hour == 24)
             {
                 hour = 0;
-                day++; 
+                day++;
             }
-            if(day == 30 )
+            if (day == 30)
             {
                 month++;
-                day = 0; 
+                day = 0;
             }
-            if(month == 12)
+            if (month == 12)
             {
                 month = 0;
-                year++; 
+                year++;
             }
 
         }
-        
-        // Will display updating variables in debug log. 
-        if(DebugTimeLog)
-        {
-            Debug.Log("Hour: " + hour + " Day: " + day + " Month: " + month + " Year: " + year); 
-            Debug.Log(elapsedTime); 
-        }
 
+        // Will display updating variables in debug log. 
+        if (DebugTimeLog)
+        {
+            Debug.Log("Hour: " + hour + " Day: " + day + " Month: " + month + " Year: " + year);
+            Debug.Log(elapsedTime);
+        }
     }
 
 
