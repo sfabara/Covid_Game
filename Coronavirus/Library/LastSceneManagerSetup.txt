@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/GastonScene.unity
+- path: Assets/Scenes/IggyScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
