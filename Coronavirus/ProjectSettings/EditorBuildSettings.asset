@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/GastonScene.unity
     guid: d02a91eb300ece74c878cadf75daecf3
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/IggyScene.unity
+    guid: 9bd32f64e60def34b913ef725790024c
   m_configObjects: {}
