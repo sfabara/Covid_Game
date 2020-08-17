@@ -310,8 +310,11 @@
 /define:UNITY_STANDALONE
 /define:UNITY_STANDALONE_WIN
 /define:UNITY_TEAM_LICENSE
+Assets\Scripts\ClickableObject.cs
 Assets\Scripts\Interactable.cs
 Assets\Scripts\Inventory.cs
+Assets\Scripts\ItemDragHandler.cs
+Assets\Scripts\ItemDropHandler.cs
 Assets\Scripts\PlayerController.cs
 Assets\Scripts\PlayerInteract.cs
 Assets\Scripts\ToggleHolos.cs

@@ -7,7 +7,6 @@ public class Interactable : MonoBehaviour
 
     public void DoInteraction()
     {
-        // Pick up and put in inventory
-        gameObject.SetActive(false);
+        
     }
 }

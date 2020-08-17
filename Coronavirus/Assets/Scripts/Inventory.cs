@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 {
     public GameObject[] inventory = new GameObject[6];
     public Button[] InventoryButtons = new Button[6];
-    
+
     public void AddItem(GameObject item)
     {
         bool itemAdded = false;
@@ -20,12 +20,15 @@ public class Inventory : MonoBehaviour
                 inventory[i] = item;
 
                 // Update UI
-                InventoryButtons[i].image.overrideSprite = item.GetComponent<SpriteRenderer>().sprite;
+                Image imageChild = InventoryButtons[i].transform.GetChild(0).GetComponent<Image>();
+                imageChild.overrideSprite = item.GetComponent<SpriteRenderer>().sprite;
+                InventoryButtons[i].transform.GetChild(0).gameObject.SetActive(true);
 
                 Debug.Log(item.name + " was added.");
                 itemAdded = true;
+
                 // Do something with the object
-                item.SendMessage("DoInteraction");
+                item.SetActive(false);
                 break;
             }
         }
@@ -37,20 +40,16 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void RemoveItem(GameObject item)
+    public void RemoveItem(GameObject item, int index)
     {
-        for (int i = 0; i < inventory.Length; i++)
-        {
-            if (inventory[i] == item)
-            {
-                // Found the item - remove it
-                inventory[i] = null;
-                Debug.Log(item.name + " was removed from the inventory.");
+        Debug.Log(inventory[index].name + " was removed from the inventory.");
 
-                // Update UI
-                InventoryButtons[i].image.overrideSprite = null;
-                break;
-            }
-        }
+        // Bring back object into world and remove from inventory
+        inventory[index].transform.position = transform.position;
+        inventory[index].SetActive(true);
+        inventory[index] = null;
+
+        // Update UI
+        InventoryButtons[index].transform.GetChild(0).gameObject.SetActive(false);
     }
 }
